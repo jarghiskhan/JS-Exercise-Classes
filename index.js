@@ -89,14 +89,13 @@ class Car {
 
     for (let milesDriven = 0; milesDriven < distance; milesDriven++) {
       this.odometer++;
-      this.tank = (this.tank-gasToMileRatio)
+      this.tank = this.tank - gasToMileRatio;
       if (this.tank <= 0) {
-        this.tank=0;
+        this.tank = 0;
         return `I ran out of fuel at ${this.odometer} miles!`;
       }
-      
     }
-    
+    this.tank=gasToMileRatio*distance;
   }
 }
 
